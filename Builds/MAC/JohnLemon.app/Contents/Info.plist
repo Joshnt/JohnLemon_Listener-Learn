@@ -5,17 +5,17 @@
     <key>CFBundleDevelopmentRegion</key>
     <string>English</string>
     <key>CFBundleExecutable</key>
-    <string>JohnLemon_FMOD</string>
+    <string>JohnLemon_Listener</string>
     <key>CFBundleGetInfoString</key>
     <string>Unity Player version 6000.0.23f1 (1c4764c07fb4). (c) 2005-2024 Unity Technologies. All rights reserved.</string>
     <key>CFBundleIconFile</key>
     <string>PlayerIcon.icns</string>
     <key>CFBundleIdentifier</key>
-    <string>com.DefaultCompany.JohnLemon-FMOD</string>
+    <string>com.Joshnt.JohnLemon-Listener</string>
     <key>CFBundleInfoDictionaryVersion</key>
     <string>6.0</string>
     <key>CFBundleName</key>
-    <string>JohnLemon_FMOD</string>
+    <string>JohnLemon_Listener</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>

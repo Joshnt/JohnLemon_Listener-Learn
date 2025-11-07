@@ -415,10 +415,10 @@ MonoBehaviour:
       Value: 0
       HasValue: 0
     DSPBufferLength:
-      Value: 4096
+      Value: 0
       HasValue: 1
     DSPBufferCount:
-      Value: 4
+      Value: 0
       HasValue: 1
     Plugins:
       Value: []
@@ -752,7 +752,7 @@ MonoBehaviour:
   active: 1
   Properties:
     LiveUpdate:
-      Value: 1
+      Value: 0
       HasValue: 1
     LiveUpdatePort:
       Value: 0
@@ -786,10 +786,10 @@ MonoBehaviour:
       HasValue: 1
     DSPBufferLength:
       Value: 0
-      HasValue: 0
+      HasValue: 1
     DSPBufferCount:
       Value: 0
-      HasValue: 0
+      HasValue: 1
     Plugins:
       Value: []
       HasValue: 0

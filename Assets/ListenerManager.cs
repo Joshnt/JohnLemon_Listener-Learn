@@ -10,6 +10,8 @@ public class ListenerManager : MonoBehaviour
     bool useCameraRotation;
     [SerializeField]
     GameObject MainCamera;
+    [SerializeField]
+    bool usePlayerModellPosition;
 
     [Space(10)]
     [SerializeField]
@@ -29,6 +31,10 @@ public class ListenerManager : MonoBehaviour
     [SerializeField]
     bool usePlayerRotation;
     [SerializeField]
+    bool skipForListener = false;
+    [SerializeField]
+    bool useLocalRotation;
+    [SerializeField]
     GameObject PlayerModell;
 
     private bool headphonesVisible = false;
@@ -38,10 +44,23 @@ public class ListenerManager : MonoBehaviour
         if (useCameraRotation && HeadphonesOnPlayerLockedToCam.activeInHierarchy && MainCamera)
         {
             HeadphonesOnPlayerLockedToCam.transform.rotation = MainCamera.transform.rotation;
+        }else if(usePlayerModellPosition && HeadphonesOnPlayerLockedToCam.activeInHierarchy && PlayerModell)
+        {
+            HeadphonesOnPlayerLockedToCam.transform.position = PlayerModell.transform.position;
         }
+
         if (usePlayerRotation && HeadphonesOnCameraRotatingWithPlayer.activeInHierarchy && PlayerModell)
         {
-            HeadphonesOnCameraRotatingWithPlayer.transform.rotation = PlayerModell.transform.rotation;
+            if (useLocalRotation)
+            {
+                HeadphonesOnCameraRotatingWithPlayer.transform.localRotation = PlayerModell.transform.localRotation;
+            }
+            else
+                HeadphonesOnCameraRotatingWithPlayer.transform.rotation = PlayerModell.transform.rotation;
+        }
+        if (usePlayerRotation && PlayerModell && !skipForListener && ListenerOnCameraRotatingWithPlayer.activeInHierarchy)
+        {
+            ListenerOnCameraRotatingWithPlayer.transform.rotation = PlayerModell.transform.rotation;
         }
     }
 
@@ -70,10 +89,10 @@ public class ListenerManager : MonoBehaviour
         switch (lpr)
         {
             case ListenerPerspectiveRotation.onCameraWithCamera:
-                ListenerOnPlayerLockedToCam.SetActive(true);
+                ListenerOnCameraLockedToCam.SetActive(true);
                 break;
             case ListenerPerspectiveRotation.onCameraWithPlayer:
-                ListenerOnPlayerRotatingWithPlayer.SetActive(true);
+                ListenerOnCameraRotatingWithPlayer.SetActive(true);
                 break;
             case ListenerPerspectiveRotation.onPlayerWithCamera:
                 ListenerOnPlayerLockedToCam.SetActive(true);

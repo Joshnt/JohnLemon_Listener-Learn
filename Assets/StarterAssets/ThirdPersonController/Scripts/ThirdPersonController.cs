@@ -1,4 +1,5 @@
-﻿ using UnityEngine;
+﻿using UnityEngine;
+using FMODUnity;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
 #endif
@@ -121,6 +122,12 @@ namespace StarterAssets
 #endif
             }
         }
+
+        // Audio
+		[Header("Audio")]
+		[SerializeField]
+		StudioEventEmitter walkLoopEmitter;
+		private bool isWalking = false;
 
 
         private void Awake()
@@ -276,6 +283,16 @@ namespace StarterAssets
             {
                 _animator.SetFloat(_animIDSpeed, _animationBlend);
                 _animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
+            }
+
+            if (_speed > 0f && !isWalking)
+            {
+				walkLoopEmitter.Play();
+				isWalking = true;
+            }else if (_speed == 0f)
+            {
+				walkLoopEmitter.Stop();
+				isWalking = false;
             }
         }
 

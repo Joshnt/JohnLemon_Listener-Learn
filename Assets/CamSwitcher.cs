@@ -121,7 +121,7 @@ public class CamSwitcher : MonoBehaviour
             }
         }
         // CTRL = Listener Pos
-        else if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl))
+        else if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl) || Input.GetKey(KeyCode.Space))
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {

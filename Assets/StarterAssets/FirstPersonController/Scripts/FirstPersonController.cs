@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using FMODUnity;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
@@ -63,6 +64,12 @@ namespace StarterAssets
 		// timeout deltatime
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
+
+		// Audio
+		[Header("Audio")]
+		[SerializeField]
+		StudioEventEmitter walkLoopEmitter;
+		private bool isWalking = false;
 
 	
 #if ENABLE_INPUT_SYSTEM
@@ -196,6 +203,16 @@ namespace StarterAssets
 
 			// move the player
 			_controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+
+			if (_speed > 0f && !isWalking)
+            {
+				walkLoopEmitter.Play();
+				isWalking = true;
+            }else if (_speed == 0f)
+            {
+				walkLoopEmitter.Stop();
+				isWalking = false;
+            }
 		}
 
 		private void JumpAndGravity()
@@ -264,5 +281,5 @@ namespace StarterAssets
 			// when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
 		}
-	}
+    }
 }

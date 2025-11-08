@@ -67,3 +67,4 @@ crashlytics-build.properties
 /FMOD/JohnLemon/.cache/*
 /FMOD/JohnLemon/.unsaved/*
 /FMOD/JohnLemon/Metadata/*
+Builds/WebGL.zip

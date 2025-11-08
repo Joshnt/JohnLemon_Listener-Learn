@@ -1,40 +1,57 @@
 
+
 # 🎵 Unity + FMOD Lessons
 
-## General Concept
-Learn Game-Audio in FMOD - without having to bother about integrating/ coding those connections in Unity.
-With that, aspiring Game-Audio-Designers can work directly in FMOD and learn/ teach the Middleware FMOD working in a readily build game!
-See setup in this Video:
-*Coming Soon*
+## Understanding Listener Placement
+
+The listener in Game-Audio terms is the camera for sound, the ears into our game world. For camera placement, we already are used to to referring to terms like "First Person" or "Third Person", yet audio is only perceived as matching or off - without thinking about why.
+
+This Mini-Project uses Unity's "Stealth Game"/ John Lemon Microgame in combination with Unity's Starter Assets for First and Third Person Controller to fluently switch between different Camera Perspectives and combine them with different listener placements.
+
+To give a clearer impression of the listener placement and rotation, you will find a pair of headphones to visualize the current position and rotation of the listener.
+
+Get an impression in this Video: ***Coming soon!***
 
 
+The actual gameplay (e.g. being spotted by ghosts) still only works with the intended top down perspective.
 
 ## ⚙️ General Handling
-- Open Game Build 
--  Open FMOD Session and Start Live Updates
-➡️That's it!
+- Pull/ Download Repository
+- Open in Unity Editor OR open the exported Build for your OS
+- *Alternatively, get an impression on this [itch build](https://joshntq.itch.io/john-lemon-listeners) **[!!! Glitching in some Browsers, e.g. Edge - more fluent experience in downloaded build !!!]***
 
-*Some additional notes:*
-- **Loop handling:** Events with the addition "Loop" in it are actively stopped by Unity - make sure they loop inside of FMOD
-- **Reload scenes**: Reload the scene via the Pause Menu (by pressing escape) when you insert a new Sound on an Event which is a loop OR when you add/ remove a spatializer on an event, so FMOD calculates those correctly.
-- **Notes on events**: all events, parameters, snapshots and folders in the FMOD Project have short notes on them to explain when they are triggered  
-- **Organize as you like**: Events and Snapshots can be renamed, re-colored and moved in the hierachy to match your personal preference – parameters **cannot!!!!**  
+*(As in the [John Lemon FMOD Learn Project](#📦other-fmod-learning-projects) you can still use the included FMOD Session to use your own sounds. As the constant listener change is not fluently working with Live-Update, it is deactivated in both the Application and the Editor.)*
+
 
 ---
 ![John Lemon](https://assetstorev1-prd-cdn.unity3d.com/key-image/9f865e30-5e38-4bee-921f-d29b028cf1b5.jpg)
+
+## 🎮Controls
+
+-   _Camera Perspective_ - use **Shift + 1/2/3** to switch between **1st Person, Top-Down** and **3rd Person view**
+-   _Listener Position -_ use **CTRL (or SPACE) + 1/2** to switch between the listener being placed on the Camera or on the player.
+-   _Listener Rotation_ - use **ALT + 1/2** to switch between the listener rotating with the camera or with the player.
+-   _Show/ Hide Headphones (Listener Visualisation)_ - **4**
+-   _Reload Scene_ - **R**
+
 ---
 
-## 📂 Structure
-- Find the **Build** for your OS in the corresponding folder *(/Builds/MAC or /WIN)*
-- Find the **FMOD-Session** in the corresponding folder *(/FMOD/Platformer_Unity_EN/Platformer_Unity_EN.fspro)*
-- FMOD session available in **English and German**  
+### Soundsources:
 
+This build only includes the following (spatialized) soundsources besides the general ambience. This was done to perceive the single sounds more clearly and not clutter the sound impression - especially when using uncommon/ weird listener placements:
+-   Ghosts *(Synth-Vibrato)*
+-   Gargoyles *(Stone movement)*
+-   Shower *(running water)*
+-   Candles *(fire crackling)*
+-   Electric Light *(buzzing)*
 
----
-## 🎮Re-Exporting the game with your own sounds
-To export/ build the game with your own sounds (without having to connect via Live-Update), you have to take two seperate steps:
-- 1) In your FMOD Project with all the sounds you have setup, choose File -> Build (F7). Keep in mind, that Unity will now always refer this state of your project for playing back sound until you connect via Live-Update.
-- 2) Open the Unity Project in the correct Editor Version **6000.0.23f1** (if you're doing that for the first time, that might take a while). Keep in mind, that you need to [install the Build Support Modules in the Unity Hub](https://docs.unity3d.com/hub/manual/AddModules.html) for the operating systems for which you want to export to (e.g. Windows Build support if you are on Mac). In the Unity Project, press File -> Build Settings... Then select the Target Platform for your game and press Build!
+### Learning/ Take-away:
+
+You will notice, that we normally expect the sound to mimic the perception of the camera angle, meaning normally sticking to the Camera rotation works best. The Placement of the listener on the other hand differs and has less of a universal solution. Especially for Top-Down/ Isometric or 2D Games as well, you will notice, that having the listener on the camera may result in a too quite output, because the listener is too far away from the soundsource.
+Still looking for a general rule of thumb?
+- *1st Person* - Listener on Camera 
+- *3rd Person* - Listener on Camera, Position offset to match Player-Character (or using FMOD's in-built "Attenuation Object" property)
+- *Top-Down/ Isometric/ 2D* - Listener on Camera, Position offset to match Player-Character (or using FMOD's in-built "Attenuation Object" property) OR experiment with Positions between Camera and Ground
 
 
 ---

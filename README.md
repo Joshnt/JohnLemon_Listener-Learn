@@ -20,7 +20,7 @@ The actual gameplay (e.g. being spotted by ghosts) still only works with the int
 - Open in Unity Editor OR open the exported Build for your OS
 - *Alternatively, get an impression on this [itch build](https://joshntq.itch.io/john-lemon-listeners) **[!!! Glitching in some Browsers, e.g. Edge - more fluent experience in downloaded build !!!]***
 
-*(As in the [John Lemon FMOD Learn Project](#📦other-fmod-learning-projects) you can still use the included FMOD Session to use your own sounds. As the constant listener change is not fluently working with Live-Update, it is deactivated in both the Application and the Editor.)*
+*(As in the [John Lemon FMOD Learn Project](https://github.com/Joshnt/JohnLemon_FMOD-Learn) you can still use the included FMOD Session to use your own sounds. As the constant listener change is not fluently working with Live-Update, it is deactivated in both the Application and the Editor.)*
 
 
 ---

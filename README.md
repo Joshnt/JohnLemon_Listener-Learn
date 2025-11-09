@@ -10,15 +10,16 @@ This Mini-Project uses Unity's "Stealth Game"/ John Lemon Microgame in combinati
 
 To give a clearer impression of the listener placement and rotation, you will find a pair of headphones to visualize the current position and rotation of the listener.
 
-Get an impression in this Video: ***Coming soon!***
+Get an impression in [this Video](https://youtu.be/dkHT5MbSS5U)!
 
 
 The actual gameplay (e.g. being spotted by ghosts) still only works with the intended top down perspective.
 
 ## ⚙️ General Handling
-- Pull/ Download Repository
+1.  Use the *Releases*, if you only want the Build (without the full Unity-Project and the FMOD Project) OR
+2.  Pull/ Download Repository
 - Open in Unity Editor OR open the exported Build for your OS
-- *Alternatively, get an impression on this [itch build](https://joshntq.itch.io/john-lemon-listeners) **[!!! Glitching in some Browsers, e.g. Edge - more fluent experience in downloaded build !!!]***
+3. *Alternatively, get an impression on this [itch build](https://joshntq.itch.io/john-lemon-listeners) **[!!! Glitching in some Browsers, e.g. Edge - more fluent experience in downloaded build !!!]***
 
 *(As in the [John Lemon FMOD Learn Project](https://github.com/Joshnt/JohnLemon_FMOD-Learn) you can still use the included FMOD Session to use your own sounds. As the constant listener change is not fluently working with Live-Update, it is deactivated in both the Application and the Editor.)*
 
